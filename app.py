@@ -16,7 +16,7 @@ class Book(db.Model):
 @app.route('/books')
 def index():
     books = Book.query.all()
-    return render_template('index.html', books=books)
+    return render_template('books.html', books=books)
 
 
 @app.route('/add_book', methods=['GET', 'POST'])
