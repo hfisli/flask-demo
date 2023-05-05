@@ -1,10 +1,18 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from os import environ
+
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://user:password@mysql/mydb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db_user = environ['MYSQL_USER']
+db_password = environ['MYSQL_PASSWORD']
+db_host = environ['MYSQL_HOST']
+db_name = environ['MYSQL_DATABASE']
+app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}'
+
 
 db = SQLAlchemy(app)
 
