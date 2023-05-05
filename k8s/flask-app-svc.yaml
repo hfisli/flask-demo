@@ -4,7 +4,7 @@ metadata:
   name: myapp
 spec:
   selector:
-    app: myapp
+    app: flask-app
   ports:
     - protocol: TCP
       port: 80
