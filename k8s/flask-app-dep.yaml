@@ -16,7 +16,7 @@ spec:
         - name: regcred
       containers:
         - name: web
-          image: quay.io/hfisli/pipelines-vote-api
+          image: quay.io/hfisli/flask-demo
           ports:
             - containerPort: 8080
           env:
