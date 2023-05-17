@@ -14,7 +14,7 @@ db_name = environ['MYSQL_DATABASE']
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}'
 
 db = SQLAlchemy(app)
-db.init_app(app)
+db.create_all()
 
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
